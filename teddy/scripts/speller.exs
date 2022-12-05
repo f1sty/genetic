@@ -19,8 +19,10 @@ defmodule Speller do
   end
 
   @impl true
-  def terminate?([best | _]) do
-    best.fitness == 1
+  def terminate?([_best | _], _generation, temperature) do
+    # best.fitness == 1
+    # generation == 10000
+    temperature < 0.00005
   end
 end
 

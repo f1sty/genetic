@@ -1,4 +1,4 @@
-defmodule OneMax do
+defmodule OneMaxInteractive do
   @behaviour Problem
   alias Types.Chromosome
 
@@ -10,7 +10,11 @@ defmodule OneMax do
 
   @impl true
   def fitness_function(chromosome) do
-    Enum.sum(chromosome.genes)
+    IO.inspect(chromosome)
+
+    IO.gets("Rate from 1 to 10 ")
+    |> String.trim()
+    |> String.to_integer()
   end
 
   @impl true
@@ -20,6 +24,6 @@ defmodule OneMax do
   end
 end
 
-solution = Teddy.run(OneMax)
+solution = Teddy.run(OneMaxInteractive)
 IO.write("\n")
 IO.inspect(solution)
