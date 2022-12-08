@@ -14,9 +14,9 @@ defmodule OneMax do
   end
 
   @impl true
-  def terminate?([_best | _], _generation, temperature) do
-    # best.fitness == 500
-    temperature < 25
+  def terminate?([best | _], _generation, _temperature) do
+    best.fitness == 500
+    # temperature < 25
   end
 end
 
